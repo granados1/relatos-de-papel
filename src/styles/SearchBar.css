@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer components {
+    .search-bar {
+        @apply flex items-center border border-black rounded-full px-4 py-2 bg-gray-200 text-black w-full;
+    }
+
+    .search-icon {
+        @apply mr-2;
+    }
+
+    .input {
+        @apply flex-1 border-none outline-none w-full;
+    }
+}

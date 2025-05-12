@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer components {
+    .header {
+        @apply text-white p-2.5 text-center;
+        background-color: var(--color-customBrown);
+    }
+
+    .header-text {
+        @apply text-3xl font-bold;
+    }
+
+    .footer-text {
+        @apply text-lg;
+    }
+}
+
+
+/*.header {
+    @apply bg-customBrown text-white p-2.5 text-center;
+    background-color: #885437;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.header-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 18px;
+}*/
