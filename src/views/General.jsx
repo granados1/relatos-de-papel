@@ -19,7 +19,7 @@ Para agregar nuevas rutas, agreguen dentro del tag Routes el siguiente tag:
 
 export const General = () => {
     const [searchQuery, setQuery] = useState('');
-    const [setorderBy, setOrderBy] = useState('Predeterminado');
+    const [orderBy, setOrderBy] = useState('default');
 
     return (
         <div className="flex flex-col min-h-screen">
