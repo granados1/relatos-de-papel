@@ -1,14 +1,18 @@
 import React from 'react';
-import '../styles/Header.css';
+import LanguageSwitcherComponent from './LanguageSwitcherComponent/LanguageSwitcherComponent'
 
-export const Header = ({ carrito }) => {
+export const Header = () => {
 
-    if(carrito){
-
-    }
     return (
-        <header className="header">
-            <h1 className="header-text">Relatos de Papel</h1>
-        </header>
+        <>
+            <header className="bg-[#f8e9d7] text-[#885437] p-4 flex justify-between items-center">
+                <div className="flex-grow text-center">
+                    <h1 className="text-4xl text-[#885437] font-georgia">
+                        RELATOS DE PAPEL
+                    </h1>
+                </div>
+                <LanguageSwitcherComponent />
+            </header>
+        </>
     );
 };
