@@ -12,15 +12,17 @@ export const SearchBar = ({ onSearch }) => {
     };
 
     return (
-        <div className="search-bar">
-            <span className="search-icon">🔍</span>
-            <input
-                type="text"
-                placeholder="Palabra clave..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={handleInputKey}
-            />
+        <div className="search-bar-container">
+            <div className="search-bar">
+                <span className="search-icon">🔍</span>
+                <input
+                    type="text"
+                    placeholder="Palabra clave..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={handleInputKey}
+                />
+            </div>
         </div>
     );
 }

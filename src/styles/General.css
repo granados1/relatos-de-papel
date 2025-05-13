@@ -2,6 +2,6 @@
 
 @layer components {
     body {
-        @apply bg-gray-500 text-white font-[sans-serif];
+        @apply bg-[#e0c3a4] text-white font-[Georgia];
     }
 }
