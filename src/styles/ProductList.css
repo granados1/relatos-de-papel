@@ -1,12 +1,24 @@
 @import "tailwindcss";
 
 @layer components {
+    .search-order-container {
+        @apply flex justify-between items-center mb-4;
+    }
+
+    .search-order-container > * {
+        @apply w-1/2;
+    }
+
+    .product-list-container {
+        @apply bg-[#e0c3a4] text-white font-[Georgia] px-6 pb-4 rounded-lg shadow-lg;
+    }
+
     .product-list {
-        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3;
     }
 
     .product-card {
-        @apply border border-gray-300 rounded-lg p-4 bg-white shadow-md hover:shadow-lg transition-shadow duration-200;
+        @apply border border-gray-300 rounded-lg p-4 bg-white shadow-md transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out;
     }
 
     .product-image {
@@ -22,14 +34,18 @@
     }
 
     .add-to-cart-button {
-        @apply bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-200;
+        @apply bg-[#885437] text-white py-2 px-2 rounded-lg hover:bg-[#e0c3a4] hover:text-black transition-colors duration-200;
     }
 
     p {
         @apply text-black text-justify;
     }
 
-    .view-details{
-        @apply bg-blue-100 hover:underline text-black py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-200;
+    .view-details {
+        @apply bg-[#e0c3a4] hover:underline text-black py-2 px-4 rounded-lg hover:bg-[#885437] hover:text-white transition-colors duration-200;
+    }
+
+    .buttons-container {
+        @apply flex justify-between items-center mt-4 px-4;
     }
 }
