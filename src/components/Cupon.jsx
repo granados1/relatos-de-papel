@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useCarrito from "../hooks/useCarrito";
+import useCarrito from "../Hooks/useCarrito";
 import "../styles/Cupon.css";
 
 const CouponInput = () => {

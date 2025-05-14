@@ -1,5 +1,5 @@
 import React from "react";
-import useCarrito from "../hooks/useCarrito";
+import useCarrito from "../Hooks/useCarrito";
 import "../styles/VerCarrito.css";
 import carritoIcon from "../../Assets/carrito.png";
 

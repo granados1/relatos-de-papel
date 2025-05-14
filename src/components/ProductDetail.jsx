@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/ProductDetail.css';
-import useCarrito from "../hooks/useCarrito";
+import useCarrito from "../Hooks/useCarrito";
 
 export const ProductDetail = ({ libro }) => {
     const { agregarAlCarrito } = useCarrito();

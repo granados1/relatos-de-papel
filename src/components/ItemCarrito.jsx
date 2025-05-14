@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/ItemCarrito.css";
-import useCarrito from "../hooks/useCarrito";
+import useCarrito from "../Hooks/useCarrito";
 
 const ItemCarrito = ({ item }) => {
     const { incrementar, decrementar, eliminarDelCarrito } = useCarrito();

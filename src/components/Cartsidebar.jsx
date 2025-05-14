@@ -1,5 +1,5 @@
 import React from "react";
-import useCarrito from "../hooks/useCarrito";
+import useCarrito from "../Hooks/useCarrito";
 import ItemCarrito from "./ItemCarrito";
 import CouponInput from "./Cupon";
 import ResumenCarrito from "./ResumenCarrito";
