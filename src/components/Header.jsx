@@ -1,6 +1,6 @@
 import React, { useState } from "react";;
 import LanguageSwitcherComponent from './LanguageSwitcherComponent/LanguageSwitcherComponent'
-import CartSidebar from "./CartSidebar";
+import CartSidebar from "./Cartsidebar";
 import VerCarrito from "./VerCarrito";
 
 export const Header = () => {
