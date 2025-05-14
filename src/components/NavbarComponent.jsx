@@ -13,6 +13,9 @@ const NavBarComponent = () => {
       <a href="/support" className="text-[#1b1f25] text-lg hover:bg-[#e0c3a4] p-2 rounded">
         Soporte
       </a>
+      <a href="/myorders" className="text-[#1b1f25] text-lg hover:bg-[#e0c3a4] p-2 rounded">
+        Mis Pedidos
+      </a>
     </nav>
   );
 };

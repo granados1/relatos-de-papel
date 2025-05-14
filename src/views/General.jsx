@@ -4,7 +4,9 @@ import { Routes, Route } from 'react-router-dom';
 import { Header } from '../components/Header.jsx';
 import { Footer } from "../components/Footer.jsx";
 import { libros } from '../data/libros.jsx';
+import { pedidos } from '../data/pedidos.jsx';
 import { ProductList } from '../components/ProductList.jsx';
+import { MyOrders } from '../components/MyOrders.jsx';
 import NavBarComponent from '../components/NavbarComponent.jsx';
 import LandingPageComponent from '../components/LandingPageComponent.jsx';
 
@@ -31,6 +33,7 @@ export const General = () => {
                         <Route path='/' element={<LandingPageComponent />} />
                         <Route path='/productlist' element={<ProductList libros={libros} search={searchQuery} order={orderBy}/>} />
                         {/* <Route path='/support' element={<SoporteComponent />} /> */}
+                        <Route path='/myorders' element={<MyOrders pedidos={pedidos} search={searchQuery} order={orderBy}/>} />
                     </Routes>
                 </div>
             </div>
