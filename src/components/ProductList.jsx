@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/ProductList.css';
+import '../styles/modal.css';
 import { SearchBar } from './SearchBar';
 import { OrderBy } from './OrderBy.jsx';
 import { FilterBy } from './FilterBy.jsx';
+import { ProductDetail } from './ProductDetail.jsx';
 
 export const ProductList = ({ libros, search: initialSearch, order: strDefault }) => {
     const [searchQuery, setQuery] = useState(initialSearch || '');
     const [orderBy, setOrderBy] = useState(strDefault || 'default');
     const [filteredLibros, setFilteredLibros] = useState(libros);
+    const [selectedLibro, setSelectedLibro] = useState(null);
 
     const handleSearch = (query) => {
         console.log('Search query en ProductList:', query);
@@ -44,6 +47,8 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault }
         setFilteredLibros(newFilteredLibros);
     }, [libros, searchQuery, orderBy]);
 
+    const handleCloseDetail = () => setSelectedLibro(null);
+
     return (
         <>
             <div className="search-order-container">
@@ -63,12 +68,29 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault }
                             <p>Precio: ${libro.price}</p>
                             <div className="buttons-container">
                                 <button className="add-to-cart-button">Agregar al carrito</button>
-                                <button className="view-details">Ver detalles</button>
+                                <button className="view-details" onClick={() => setSelectedLibro(libro)}>Ver detalles</button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+            {selectedLibro && (
+                <div className="modal-product-detail">
+                    <div className="modal-content-relative" style={{ position: 'relative' }}>
+                        <button className="close-modal-btn" onClick={handleCloseDetail} aria-label="Cerrar">
+                            &times;
+                        </button>
+                        <div className="modal-flex-container">
+                            <div className="modal-section modal-section-detail">
+                                <ProductDetail libro={selectedLibro} />
+                            </div>
+                            <div className="modal-section modal-section-new">
+                                <div className="nuevo-componente-text">Nuevo componente</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 };

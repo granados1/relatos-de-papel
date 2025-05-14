@@ -29,7 +29,7 @@ export const General = () => {
                 <div className="flex-grow flex flex-col">
                     <Routes>
                         <Route path='/' element={<LandingPageComponent />} />
-                        <Route path='/productlist' element={<ProductList libros={libros} search={searchQuery}/>} />
+                        <Route path='/productlist' element={<ProductList libros={libros} search={searchQuery} order={orderBy}/>} />
                         {/* <Route path='/support' element={<SoporteComponent />} /> */}
                     </Routes>
                 </div>
