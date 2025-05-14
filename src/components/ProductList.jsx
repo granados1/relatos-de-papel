@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/ProductList.css';
-import '../styles/modal.css';
+import '../styles/Modal.css';
 import { SearchBar } from './SearchBar';
 import { OrderBy } from './OrderBy.jsx';
 import { FilterBy } from './FilterBy.jsx';
