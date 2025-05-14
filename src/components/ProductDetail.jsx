@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import '../styles/ProductDetail.css';
+import useCarrito from "../hooks/useCarrito";
 
 export const ProductDetail = ({ libro }) => {
+    const { agregarAlCarrito } = useCarrito();
     return (
         
             <div className="product-detail">
@@ -19,7 +21,12 @@ export const ProductDetail = ({ libro }) => {
                     <p>Año: {libro.year}</p>
                     <p>Precio: ${libro.price}</p>
                     <div className="buttons-container-detail">
-                        <button className="add-to-cart-button-detail">Agregar al carrito</button>
+                        <button
+                            onClick={() => agregarAlCarrito(libro)}
+                            className="boton boton--agregar"
+                        >
+                            Añadir al carrito
+                        </button>
                         <button className="comprar-button-detail">Comprar</button>
                     </div>
                 </div>

@@ -49,3 +49,29 @@
         @apply flex justify-between items-center mt-4 px-4;
     }
 }
+
+
+.boton {
+    margin-top: auto;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border: none;
+    font-family: Georgia, Times, serif;
+
+
+    min-width: 100px;
+    max-width: 150px;
+    width: fit-content;
+}
+
+
+.boton--agregar {
+    background-color: #B69B82;
+}
+
+.boton--agregar:hover {
+    background-color: #57411d;
+}

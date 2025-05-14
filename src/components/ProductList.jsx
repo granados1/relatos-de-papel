@@ -5,8 +5,10 @@ import { SearchBar } from './SearchBar';
 import { OrderBy } from './OrderBy.jsx';
 import { FilterBy } from './FilterBy.jsx';
 import { ProductDetail } from './ProductDetail.jsx';
+import useCarrito from "../hooks/useCarrito";
 
 export const ProductList = ({ libros, search: initialSearch, order: strDefault }) => {
+    const { agregarAlCarrito } = useCarrito();
     const [searchQuery, setQuery] = useState(initialSearch || '');
     const [orderBy, setOrderBy] = useState(strDefault || 'default');
     const [filteredLibros, setFilteredLibros] = useState(libros);
@@ -67,7 +69,13 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault }
                             <p>{libro.description}</p>
                             <p>Precio: ${libro.price}</p>
                             <div className="buttons-container">
-                                <button className="add-to-cart-button">Agregar al carrito</button>
+                                <button
+                                    onClick={() => agregarAlCarrito(libro)}
+
+                                    className="boton boton--agregar"
+                                >
+                                    Añadir al carrito
+                                </button>
                                 <button className="view-details" onClick={() => setSelectedLibro(libro)}>Ver detalles</button>
                             </div>
                         </div>
