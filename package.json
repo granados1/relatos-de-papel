@@ -15,7 +15,8 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0",
     "relatos": "file:",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.6",
+    "sweetalert2": "^11.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
