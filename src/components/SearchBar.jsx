@@ -5,7 +5,7 @@ export const SearchBar = ({ onSearch }) => {
     const [query, setQuery] = useState('');
 
     const handleInputKey = (event) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' || event.key === 'Backspace') {
             console.log('Search query:', query);
             onSearch(query);
         }
