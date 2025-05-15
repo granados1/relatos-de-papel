@@ -49,11 +49,11 @@
     }
 
     .modal-flex-container {
-        @apply flex flex-row w-full h-full min-w-[600px] min-h-[300px];
+        @apply flex flex-col gap-4 w-full h-full md:flex-row;
     }
 
     .modal-section {
-        @apply w-1/2 flex items-center justify-center;
+        @apply w-full flex items-center justify-center md:w-1/2;
     }
 
     .modal-section-detail {

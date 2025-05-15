@@ -21,12 +21,7 @@ export const ProductDetail = ({ libro }) => {
                     <p>Año: {libro.year}</p>
                     <p>Precio: ${libro.price}</p>
                     <div className="buttons-container-detail">
-                        <button
-                            onClick={() => agregarAlCarrito(libro)}
-                            className="add-to-cart-button-detail"
-                        >
-                            Añadir al carrito
-                        </button>
+                        <button onClick={() => agregarAlCarrito(libro)} className="add-to-cart-button-detail">Añadir al carrito</button>
                         <button className="comprar-button-detail">Comprar</button>
                     </div>
                 </div>

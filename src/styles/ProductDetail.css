@@ -6,11 +6,11 @@
     }
 
     .product-detail-top {
-        @apply flex flex-row gap-0 w-full;
+        @apply flex flex-col md:flex-row gap-4 w-full;
     }
 
     .product-detail-image-container {
-        @apply flex flex-auto justify-center items-center;
+        @apply flex justify-center items-center w-full md:w-1/2;
     }
 
     .product-detail-image{
@@ -22,7 +22,7 @@
     }
 
     .product-detail-description {
-        @apply flex flex-1 basis-1/2 flex-col justify-center gap-0;
+        @apply flex flex-col justify-center w-full md:w-1/2;
     }
 
     .product-detail-bottom {
