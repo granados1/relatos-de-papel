@@ -5,12 +5,15 @@ import { SearchBar } from './SearchBar';
 import { OrderBy } from './OrderBy.jsx';
 import { FilterBy } from './FilterBy.jsx';
 import { ProductDetail } from './ProductDetail.jsx';
+import useCarrito from "../Hooks/useCarrito";
 
-export const ProductList = ({ libros, search: initialSearch, order: strDefault }) => {
+export const ProductList = ({ libros, search: initialSearch, order: strDefault, filtered: initialFiltered }) => {
+    const { agregarAlCarrito } = useCarrito();
     const [searchQuery, setQuery] = useState(initialSearch || '');
     const [orderBy, setOrderBy] = useState(strDefault || 'default');
     const [filteredLibros, setFilteredLibros] = useState(libros);
     const [selectedLibro, setSelectedLibro] = useState(null);
+    const [filteredBy, setFilteredBy] = useState(initialFiltered || '');
 
     const handleSearch = (query) => {
         console.log('Search query en ProductList:', query);
@@ -22,12 +25,20 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault }
         console.log('OrderBy en ProductList:', valueOrder);
     };
 
+    const handleFilter = (valueFilter) => {
+        setFilteredBy(valueFilter);
+        console.log('FilterBy en ProductList:', valueFilter);
+    }
+
     useEffect(() => {
-        const newFilteredLibros = [...(searchQuery
+        let newFilteredLibros = [...(searchQuery
             ? libros.filter((libro) => libro.title.toLowerCase().includes(searchQuery.toLowerCase())
                 || libro.author.toLowerCase().includes(searchQuery.toLowerCase())
                 || libro.description.toLowerCase().includes(searchQuery.toLowerCase()))
             : libros)];
+        if (filteredBy !== '' && !isNaN(filteredBy)) {
+            newFilteredLibros = newFilteredLibros.filter((libro) => libro.price >= 0 && libro.price <= Number(filteredBy));
+        }
         switch (orderBy) {
             case 'price-asc':
                 newFilteredLibros.sort((a, b) => a.price - b.price);
@@ -45,7 +56,7 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault }
                 break;
         }
         setFilteredLibros(newFilteredLibros);
-    }, [libros, searchQuery, orderBy]);
+    }, [libros, searchQuery, orderBy, filteredBy]);
 
     const handleCloseDetail = () => setSelectedLibro(null);
 
@@ -54,7 +65,7 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault }
             <div className="search-order-container">
                 <SearchBar onSearch={handleSearch} />
                 <OrderBy onOrderBy={handleOrder}/>
-                <FilterBy />
+                <FilterBy onFilterBy={handleFilter}/>
             </div>
             <div className="product-list-container">
                 <div className="product-list">
@@ -67,7 +78,13 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault }
                             <p>{libro.description}</p>
                             <p>Precio: ${libro.price}</p>
                             <div className="buttons-container">
-                                <button className="add-to-cart-button">Agregar al carrito</button>
+                                <button
+                                    onClick={() => agregarAlCarrito(libro)}
+
+                                    className="button-add-to-cart"
+                                >
+                                    Añadir al carrito
+                                </button>
                                 <button className="view-details" onClick={() => setSelectedLibro(libro)}>Ver detalles</button>
                             </div>
                         </div>

@@ -48,4 +48,8 @@
     .buttons-container {
         @apply flex justify-between items-center mt-4 px-4;
     }
+
+    .button-add-to-cart {
+        @apply bg-[#885437] hover:underline text-black py-2 px-4 rounded-lg hover:bg-[#e0c3a4] hover:text-black transition-colors duration-200;
+    }
 }

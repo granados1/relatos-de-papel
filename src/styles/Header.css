@@ -15,20 +15,14 @@
     }
 }
 
-
-/*.header {
-    @apply bg-customBrown text-white p-2.5 text-center;
-    background-color: #885437;
-    color: white;
-    padding: 10px;
-    text-align: center;
+.header {
+  @apply bg-[#f8e9d7] text-[#885437] p-4 flex justify-between items-center;
 }
 
-.header-text {
-    font-size: 30px;
-    font-weight: bold;
+.header__title {
+  @apply text-4xl text-[#885437] flex-grow text-center;
 }
 
-.footer-text {
-    font-size: 18px;
-}*/
+.familia {
+  font-family: Georgia, times, serif;
+}

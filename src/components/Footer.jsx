@@ -1,11 +1,12 @@
 import React from 'react';
+import '../styles/Footer.css';
 
 export const Footer = () => {
-    return (
-        <footer className="bg-[#aa7c5b] text-[#f8e9d7] p-4 text-center">
-            <p className="text-sm">Calle Falsa 123</p>
-            <p className="text-sm">Bogotá</p>
-            <p className="text-sm">Colombia</p>
-        </footer>
-    );
+  return (
+    <footer className="footer familia"> {/* Aplicamos la clase 'familia' al bloque footer */}
+      <p className="footer__address-line">Calle Falsa 123</p>
+      <p className="footer__address-line">Bogotá</p>
+      <p className="footer__address-line">Colombia</p>
+    </footer>
+  );
 }
