@@ -22,6 +22,7 @@ Para agregar nuevas rutas, agreguen dentro del tag Routes el siguiente tag:
 export const General = () => {
     const [searchQuery, setQuery] = useState('');
     const [orderBy, setOrderBy] = useState('default');
+    const [filteredLibros, setFilteredLibros] = useState('');
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -33,7 +34,7 @@ export const General = () => {
                         <Route path='/' element={<LandingPageComponent />} />
                         <Route path='/productlist' element={<ProductList libros={libros} search={searchQuery} order={orderBy}/>} />
                         {/* <Route path='/support' element={<SoporteComponent />} /> */}
-                        <Route path='/myorders' element={<MyOrders pedidos={pedidos} search={searchQuery} order={orderBy}/>} />
+                        <Route path='/myorders' element={<MyOrders pedidos={pedidos} search={searchQuery} order={orderBy} filtered={filteredLibros}/>} />
                     </Routes>
                 </div>
             </div>
