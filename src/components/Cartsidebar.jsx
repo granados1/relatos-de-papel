@@ -44,8 +44,8 @@ const CartSidebar = ({ isOpen, onClose }) => {
                                         icon: 'success',
                                         confirmButtonText: 'Aceptar',
                                     }).then(() => {
-                                        vaciarCarrito(); // vacía el carrito
-                                        onClose();       // cierra el sidebar
+                                        vaciarCarrito();
+                                        onClose();
                                     });
                                 }
                             });
