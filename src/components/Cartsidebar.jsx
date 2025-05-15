@@ -7,7 +7,7 @@ import "../styles/Cartsidebar.css";
 import Swal from 'sweetalert2';
 
 const CartSidebar = ({ isOpen, onClose }) => {
-    const { carrito } = useCarrito();
+    const { carrito, vaciarCarrito } = useCarrito();
 
     return (
         <div className={`cart--sidebar ${isOpen ? "open" : ""}`}>
@@ -43,6 +43,9 @@ const CartSidebar = ({ isOpen, onClose }) => {
                     `,
                                         icon: 'success',
                                         confirmButtonText: 'Aceptar',
+                                    }).then(() => {
+                                        vaciarCarrito(); // vacía el carrito
+                                        onClose();       // cierra el sidebar
                                     });
                                 }
                             });
