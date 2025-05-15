@@ -57,8 +57,7 @@
     }
 
     .modal-section-detail {
-        @apply pr-4;
-        border-right: 2px solid #eee;
+        @apply pr-4 md:border-r-2 md:border-white;
     }
 
     .modal-section-new {
