@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @layer components {
-    .search-order-container {
+    .search--order--container {
         @apply flex justify-between items-center mb-4;
     }
 
-    .search-order-container > * {
+    .search--order--container > * {
         @apply w-1/2;
     }
 
-    .product-list-container {
+    .product--list--container {
         @apply bg-[#e0c3a4] text-white font-[Georgia] px-6 pb-4 rounded-lg shadow-lg;
     }
 
@@ -49,25 +49,25 @@
         @apply flex justify-between items-center mt-4 px-4;
     }
 
-    .table-orders {
+    .table--orders {
         border-collapse: collapse !important;
         width: 100% !important;
-        background-color: rgb(247, 227, 227) !important;
+        background-color:white !important;
         color: rgb(24, 23, 23) !important; /* Color de texto rojo */
     }
 
-    .table-orders th,
-    .table-orders td {
+    .table--orders th,
+    .table--orders td {
         border: 1px solid black !important; /* Borde en negrita */
         padding: 10px !important;
         text-align: center !important;
     }
 
-    .mtable-orders th {
+    .mtable--orders th {
         font-weight: bold !important; /* Negrita para la primera fila */
     }
 
-    .boton-actions-2 {
+    .boton--actions-2 {
         display: block; /* Salto de línea */
         margin: 5px auto;
         padding: 6px 10px;
@@ -78,7 +78,12 @@
         cursor: pointer;
         }
 
-        .boton-actions {
+        .boton--actions {
         @apply bg-[#885437] text-white py-0.5 px-2 rounded-lg hover:bg-[#e0c3a4] hover:text-black transition-colors duration-200;
     }
+
+    .support--list--container {
+        @apply bg-[white] text-white font-[Georgia] px-6 pb-58 rounded-lg shadow-lg;
+    }
+
 }

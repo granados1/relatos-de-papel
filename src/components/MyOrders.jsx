@@ -4,10 +4,12 @@ import { SearchBar } from './SearchBar.jsx';
 import { OrderBy } from './OrderBy.jsx';
 import { FilterBy } from './FilterBy.jsx';
 
-export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault }) => {
+export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault, filtered: initialFiltered }) => {
+
     const [searchQuery, setQuery] = useState(initialSearch || '');
     const [orderBy, setOrderBy] = useState(strDefault || 'default');
     const [filteredLibros, setFilteredLibros] = useState(pedidos);
+    const [filteredBy, setFilteredBy] = useState(initialFiltered || '');
 
     const handleSearch = (query) => {
         console.log('Search query en MyOrders:', query);
@@ -19,12 +21,25 @@ export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault }) 
         console.log('OrderBy en MyOrders:', valueOrder);
     };
 
+    const handleFilter = (valueFilter) => {
+        setFilteredBy(valueFilter);
+        console.log('FilterBy en ProductList:', valueFilter);
+    }
+
+
     useEffect(() => {
         const newFilteredLibros = [...(searchQuery
             ? pedidos.filter((pedido) => pedido.title.toLowerCase().includes(searchQuery.toLowerCase())
                 || pedido.date.toLowerCase().includes(searchQuery.toLowerCase())
-                || pedido.description.toLowerCase().includes(searchQuery.toLowerCase()))
+                || pedido.state.toLowerCase().includes(searchQuery.toLowerCase())
+                || pedido.tracking.toLowerCase().includes(searchQuery.toLowerCase())
+              )
             : pedidos)];
+
+         if (filteredBy !== '' && !isNaN(filteredBy)) {
+            newFilteredLibros = newFilteredLibros.filter((pedido) => pedido.price >= 0 && pedido.price <= Number(filteredBy));
+        }
+
         switch (orderBy) {
             case 'price-asc':
                 newFilteredLibros.sort((a, b) => a.price - b.price);
@@ -46,14 +61,15 @@ export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault }) 
 
     return (
         <>
-            <div className="search-order-container">
+            <div className="search--order--container">
                 <SearchBar onSearch={handleSearch} />
                 <OrderBy onOrderBy={handleOrder}/>
-                <FilterBy />
+                <FilterBy onFilterBy={handleFilter}/>
             </div>
-            <div className="product-list-container">
+
+            <div className="product--list--container">
              
-                   <table className='table-orders'>
+                   <table className='table--orders'>
                       <thead>
                         <tr>
                           <th>Fecha de compra</th>
@@ -77,7 +93,7 @@ export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault }) 
                                  <div  style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
                                   {(pedido.state === 'Preparación' || pedido.state === 'Enviado') && (
                                       <button
-                                        className='boton-actions'
+                                        className='boton--actions'
                                         onClick={() => alert(`Acción para ${pedido.title}`)}
                                       >
                                         Seguimiento         
@@ -87,13 +103,13 @@ export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault }) 
                                    {pedido.state === 'Preparación'  && (
                                      <>
                                       <button
-                                        className='boton-actions'
+                                        className='boton--actions'
                                         onClick={() => alert(`Acción para ${pedido.title}`)}
                                       >
                                         Modificar        
                                       </button>
                                       <button
-                                        className='boton-actions'
+                                        className='boton--actions'
                                         onClick={() => alert(`Acción para ${pedido.title}`)}
                                       >
                                         Cancelar        
@@ -103,7 +119,7 @@ export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault }) 
 
                                   {pedido.state === 'Entregado' && (
                                       <button
-                                        className='boton-actions'
+                                        className='boton--actions'
                                         onClick={() => alert(`Acción para ${pedido.title}`)}
                                       >
                                         Volver a comprar        

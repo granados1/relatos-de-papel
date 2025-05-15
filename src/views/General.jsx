@@ -5,10 +5,12 @@ import { Header } from '../components/Header.jsx';
 import { Footer } from "../components/Footer.jsx";
 import { libros } from '../data/libros.jsx';
 import { pedidos } from '../data/pedidos.jsx';
+import { soportes } from '../data/soportes.jsx';
 import { ProductList } from '../components/ProductList.jsx';
 import { MyOrders } from '../components/MyOrders.jsx';
 import NavBarComponent from '../components/NavbarComponent.jsx';
 import LandingPageComponent from '../components/LandingPageComponent.jsx';
+import { Support } from '../components/Support.jsx';
 
 /*
 Para agregar nuevas rutas, agreguen dentro del tag Routes el siguiente tag:
@@ -33,7 +35,7 @@ export const General = () => {
                     <Routes>
                         <Route path='/' element={<LandingPageComponent />} />
                         <Route path='/productlist' element={<ProductList libros={libros} search={searchQuery} order={orderBy}/>} />
-                        {/* <Route path='/support' element={<SoporteComponent />} /> */}
+                         <Route path='/support' element={<Support soportes={soportes} search={searchQuery} order={orderBy} filtered={filteredLibros}/>} /> 
                         <Route path='/myorders' element={<MyOrders pedidos={pedidos} search={searchQuery} order={orderBy} filtered={filteredLibros}/>} />
                     </Routes>
                 </div>
