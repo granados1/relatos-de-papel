@@ -5,6 +5,7 @@ import { SearchBar } from './SearchBar';
 import { OrderBy } from './OrderBy.jsx';
 import { FilterBy } from './FilterBy.jsx';
 import { ProductDetail } from './ProductDetail.jsx';
+import { Review } from './Review.jsx';
 import useCarrito from "../Hooks/useCarrito";
 
 export const ProductList = ({ libros, search: initialSearch, order: strDefault, filtered: initialFiltered }) => {
@@ -102,7 +103,7 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault, 
                                 <ProductDetail libro={selectedLibro} />
                             </div>
                             <div className="modal-section modal-section-new">
-                                <div className="nuevo-componente-text">Nuevo componente</div>
+                                 <Review libro={selectedLibro} />
                             </div>
                         </div>
                     </div>
