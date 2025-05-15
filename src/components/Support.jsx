@@ -27,7 +27,7 @@ export const Support = ({ soportes, search: initialSearch, order: strDefault, fi
     }
 
     useEffect(() => {
-        const newFilteredLibros = [...(searchQuery
+        let newFilteredLibros = [...(searchQuery
             ? soportes.filter((soporte) => soporte.type.toLowerCase().includes(searchQuery.toLowerCase())
                 || soporte.date.toLowerCase().includes(searchQuery.toLowerCase())
                 || soporte.state.toLowerCase().includes(searchQuery.toLowerCase())

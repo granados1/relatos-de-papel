@@ -28,7 +28,7 @@ export const MyOrders = ({ pedidos, search: initialSearch, order: strDefault, fi
 
 
     useEffect(() => {
-        const newFilteredLibros = [...(searchQuery
+        let newFilteredLibros = [...(searchQuery
             ? pedidos.filter((pedido) => pedido.title.toLowerCase().includes(searchQuery.toLowerCase())
                 || pedido.date.toLowerCase().includes(searchQuery.toLowerCase())
                 || pedido.state.toLowerCase().includes(searchQuery.toLowerCase())
