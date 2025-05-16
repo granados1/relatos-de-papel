@@ -13,7 +13,7 @@ export function useInactivityRedirect(timeoutMs = 5000) { // 5 seg
       }, timeoutMs);
     };
 
-    const events = ["mousemove", "keydown", "mousedown", "touchstart"];
+    const events = ["mousemove", "keydown", "mousedown", "touchstart", "scroll"];
     events.forEach((event) => window.addEventListener(event, resetTimer));
     resetTimer();
 
