@@ -72,7 +72,9 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault, 
                 <div className="product-list">
                     {filteredLibros.map((libro) => (
                         <div key={libro.id} className="product-card">
-                            <img src={libro.image} alt={libro.title} className="product-image" />
+                            <div className="product-image-container">
+                                <img src={libro.image} alt={libro.title} className="product-image" />
+                            </div>
                             <h2 className='product-name'>{libro.title}</h2>
                             <p>Autor: {libro.author}</p>
                             <p>Año: {libro.year}</p>
