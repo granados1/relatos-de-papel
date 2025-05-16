@@ -6,7 +6,7 @@ import { OrderBy } from './OrderBy.jsx';
 import { FilterBy } from './FilterBy.jsx';
 import { ProductDetail } from './ProductDetail.jsx';
 import { Review } from './Review.jsx';
-import useCarrito from "../Hooks/useCarrito";
+import useCarrito from "../Hooks/useCarrito.js";
 
 export const ProductList = ({ libros, search: initialSearch, order: strDefault, filtered: initialFiltered }) => {
     const { agregarAlCarrito } = useCarrito();
