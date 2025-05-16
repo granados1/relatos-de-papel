@@ -85,7 +85,7 @@ export const libros = [
         year: "1925",
         description: "Una novela que explora temas de riqueza, amor y decadencia en la sociedad estadounidense de los años 1920.",
         price: 12.00,
-        image: "https://images.cdn3.buscalibre.com/fit-in/360x360/db/4f/db4f7c8407da4f233726273715c21685.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh8hsiLo3JrTzaZWiSG41vo2aFRskRUfY-yQ&s",
         review: "El Gran Gatsby, de F. Scott Fitzgerald, es una clásica historia de amor ambientada en la década de 1920, en el contexto de la Era del Jazz"
     },
     {
@@ -165,7 +165,7 @@ export const libros = [
         year: "1955",
         description: "La controvertida historia de la obsesión de un hombre por una niña de doce años.",
         price: 15.50,
-        image: "https://b2clibrerianacional.vtexassets.com/arquivos/ids/277965-800-800?v=638645538545530000&width=800&height=800&aspect=true",
+        image: "https://imagenes.elpais.com/resizer/v2/P63GNNL5TJQD6HW33EISHCVAQM.jpg?auth=4dab9992adc5b521e0055fedc7deac4af7d6473d78fae39418dcbb3d773e9558&width=1960",
         review: "Lolita, de Vladimir Nabokov, es una novela controvertida y compleja que explora la obsesión de Humbert Humbert, un profesor, por una niña de 12 años, Dolores Haze (Lolita)"
     },
     {
