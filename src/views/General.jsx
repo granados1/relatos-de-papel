@@ -11,6 +11,7 @@ import { MyOrders } from '../components/MyOrders.jsx';
 import NavBarComponent from '../components/NavbarComponent.jsx';
 import LandingPageComponent from '../components/LandingPageComponent.jsx';
 import { Support } from '../components/Support.jsx';
+import { useInactivityRedirect } from '../hooks/useInactivityRedirect';
 
 /*
 Para agregar nuevas rutas, agreguen dentro del tag Routes el siguiente tag:
@@ -25,6 +26,8 @@ export const General = () => {
     const [searchQuery, setQuery] = useState('');
     const [orderBy, setOrderBy] = useState('default');
     const [filteredLibros, setFilteredLibros] = useState('');
+
+    useInactivityRedirect(5000);  //5 seg
 
     return (
         <div className="flex flex-col min-h-screen">
