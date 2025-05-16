@@ -11,7 +11,7 @@ import { MyOrders } from '../components/MyOrders.jsx';
 import NavBarComponent from '../components/NavbarComponent.jsx';
 import LandingPageComponent from '../components/LandingPageComponent.jsx';
 import { Support } from '../components/Support.jsx';
-import { useInactivityRedirect } from '../Hooks/useInactivityRedirect';
+import { useInactivityRedirect } from '../Hooks/useInactivityRedirect.jsx';
 
 /*..
 Para agregar nuevas rutas, agreguen dentro del tag Routes el siguiente tag:
