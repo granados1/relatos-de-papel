@@ -18,7 +18,7 @@ export const Review = ({ libro }) => {
     return (
         
             <div className="product-detail">
-                <h2 className='product-detail-name'>{libro.title}</h2>
+                <h2 className='product-detail-name'>Reseñas: {libro.title}</h2>
                 <div className="product-detail-top">
                     <div className="product--review--image--container">
                         <img src="https://previews.123rf.com/images/pixelalex/pixelalex1702/pixelalex170200045/72228911-icono-de-l%C3%ADnea-de-rese%C3%B1as-de-clientes.jpg" alt="Reseña: {libro.title}" className="product-detail-image" />
