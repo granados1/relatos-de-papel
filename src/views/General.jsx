@@ -27,7 +27,7 @@ export const General = () => {
     const [orderBy, setOrderBy] = useState('default');
     const [filteredLibros, setFilteredLibros] = useState('');
 
-    useInactivityRedirect(5000);  //5 seg
+    useInactivityRedirect(500000);  //5 seg
 
     return (
         <div className="flex flex-col min-h-screen">
