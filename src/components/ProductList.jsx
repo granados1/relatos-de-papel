@@ -81,7 +81,7 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault, 
                             <p className="product-description">{libro.description}</p>
                             <p>Precio: ${libro.price}</p>
                             <div className="buttons-container">
-                                <button onClick={() => agregarAlCarrito(libro)} className="button-add-to-cart">Añadir al carrito</button>
+                                <button id={`add-to-cart-${libro.id}`} onClick={() => agregarAlCarrito(libro)} className="button-add-to-cart">Añadir al carrito</button>
                                 <button className="view-details" onClick={() => setSelectedLibro(libro)}>Ver detalles</button>
                             </div>
                         </div>
