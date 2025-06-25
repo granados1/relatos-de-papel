@@ -12,7 +12,7 @@ const CartButton = ({ onClick }) => {
     const discount = cupon ? totalCost * cupon.discount : 0;
     const total = totalCost - discount;
     return (
-        <button onClick={onClick} className="cart--button">
+        <button id="ver-carrito-btn" onClick={onClick} className="cart--button">
             <img src={carritoIcon} alt="Carrito" />
             Ver carrito
             <span className="cart-npm -badge">
