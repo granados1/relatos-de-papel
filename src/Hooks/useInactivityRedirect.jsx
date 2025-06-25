@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function useInactivityRedirect(timeoutMs = 5000) { // 5 seg
+export function useInactivityRedirect(timeoutMs = 500000) { // 5 seg
   const navigate = useNavigate();
   const timer = useRef();
 
