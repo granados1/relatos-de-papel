@@ -17,7 +17,7 @@ const ItemCarrito = ({ item }) => {
                     <span id={`item-quantity-${item.id}`}>{item.quantity}</span>
                     <button onClick={() => incrementar(item.id)} className="familia botonc boton--adjust">+</button>
                 </div>
-                <button onClick={() => eliminarDelCarrito(item.id)} className="btn--remove">Quitar</button>
+                <button id={`x-btn-${item.id}`} onClick={() => eliminarDelCarrito(item.id)} className="btn--remove">Quitar</button>
             </div>
         </div>
     );
