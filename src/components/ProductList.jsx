@@ -75,7 +75,7 @@ export const ProductList = ({ libros, search: initialSearch, order: strDefault, 
                             <div className="product-image-container">
                                 <img src={libro.image} alt={libro.title} className="product-image" />
                             </div>
-                            <h2 className='product-name'>{libro.title}</h2>
+                            <h2 id={`name-${libro.id}`} className='product-name'>{libro.title}</h2>
                             <p id={`autor-${libro.id}`}>Autor: {libro.author}</p>
                             <p>Año: {libro.year}</p>
                             <p className="product-description">{libro.description}</p>
